@@ -28,6 +28,13 @@ DEPRECATED FUNCTIONALITY
 - Deprecated using signature-file-per-directory (aka old-style SConsign)
   via the SConsignFile(name=None) call.
 
+- The legacy job scheduler, which was superseded by a new scheduler in
+  SCons 4.7  but remained available as a fallback, is deprecated and
+  will be removed in the next release. The --experimental feature flag
+  to select the legacy scheduler is renamed to "legacy_sched_deprecated"
+  to give a clear indication of the status change; the flag will also
+  be removed in the next release.
+
 REMOVED FUNCTIONALITY
 ---------------------
 
@@ -57,6 +64,9 @@ FIXES
   and targets would put such arguments into targets, and they remained
   there even after the AddOption calls were seen.
 
+- Fix CPPDEFINES test using pkg-config, which was failing on GH Actions.
+
+- Fix -n / --no-exec support when using ninja tool
 
 IMPROVEMENTS
 ------------
@@ -81,6 +91,7 @@ IMPROVEMENTS
   * Fix for_signature logic bug in ListSubber.expand() for correct signature
     generation
   * Modernize string formatting to f-strings
+  Also, separately, some code-style cleanups and docstring work in Subst.py.
 
 - Test runner reworked to use Python logging; the portion of the test suite
   which tests the runner was adjusted to match.
@@ -102,10 +113,28 @@ long function signature lines, and some linting-inspired cleanups.
 
 - Don't duplicate the creation of Tool objects if "default" is part of
   the tool list.
+
 - Test suite: add support for Python 3.15 in the Action unit tests.
+
 - zip tool now uses zipfile module's "from_file" method to populate ZipInfo
   records, rather than doing manually.
 
+- Add RequiredPackage to the LaTeX scanner for recursive scanning of custom
+  LaTeX packages.
+
+- Java tool recognizes all released versions, and no longer needs manual
+  updating as new releases are made. Default is now latest LTS - v25.
+
+- Clarify internal usage of zipimporter (not user-visible code)
+
+- Handle missing/malformed manifest in mslink more gracefully (issue 4866).
+
+- Change the way ldc D compiler specifies including libdruntime when
+  making a shared object. ldc version 1.3 (2017) introduced shared
+  druntime on some platforms, with an odd library naming scheme. SCons
+  specification was "too precise" to work cross-platform with the new
+  scheme, now let the linker pass pick. Adjust $SHDLINKFLAGS to change this,
+  or choose other schemes, such as LTO libs.
 
 PACKAGING
 ---------
@@ -169,6 +198,14 @@ DOCUMENTATION
 
 - Tighten up the doc for Variables-Add() and add a note on file contents
   not being preserved to Variables-Save()
+
+* Tweak the wording for $PRINT_CMD_LINE_FUNC.
+
+- Fixed an old problem in PDF doc generation where the path to an
+  image file ended up with a "not found" error.
+
+- Fixed PDF doc build problems relating to illegal margin widths ("")
+  and table column alignment.
 
 DEVELOPMENT
 -----------
