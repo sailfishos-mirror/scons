@@ -10,22 +10,7 @@ NOTE: Since SCons 4.3.0, Python 3.6.0 or above is required.
 NOTE: Since SCons 4.9.0, Python 3.7.0 or above is required.
 NOTE: The last release to support Python 3.7 or Python 3.8 is 4.11.0.
 
-RELEASE  VERSION/DATE TO BE FILLED IN LATER
-
-  From John Doe:
-    - Whatever John Doe did.
-
-  From Vassili Tchersky:
-    - Add 'bsd' platform definition.
-    - The default tool search order now prefers the LLVM/clang toolchain
-      over GCC on FreeBSD and OpenBSD (PR #4887).
-
-  From Cornelii Sandberg:
-    - Fix Variables() not reading a saved-variables file (e.g. custom.py)
-      from the source directory when building in a separate variant
-      directory. The file is now resolved through the File() node
-      infrastructure, so it is found in the source directory or a
-      repository (issue #816).
+RELEASE 4.11.0 - Mon, 10 Aug 2026 21:16:00 -0700
 
   From Joseph Brill:
     - Add possible build failure when targeting 32-bit arm using
@@ -90,13 +75,6 @@ RELEASE  VERSION/DATE TO BE FILLED IN LATER
     - Fix typos in preface, Chapter 6, Chapter 9 and Chapter 10 of User Guide
     - Fix broken links in Chapter 1 of User Guide
 
-  From Paul Movall:
-    - Fix --no-exec when using ninja tool
-
-  From Keith F. Prussing:
-    - Add RequiredPackage to the LaTeX scanner for recursive scanning of
-      custom LaTeX packages.
-
   From Dillan Mills:
     - Fix handling of AddOption for option-arguments with spaces
       (when omitting the = sign or when an option takes multiple
@@ -104,6 +82,25 @@ RELEASE  VERSION/DATE TO BE FILLED IN LATER
       splits the command line into arguments and targets would put such
       arguments into targets, and they remained there even after the
       AddOption calls were seen. Closes #2748, #2805, #2977.
+
+  From Paul Movall:
+    - Fix --no-exec when using ninja tool
+
+  From Keith F. Prussing:
+    - Add RequiredPackage to the LaTeX scanner for recursive scanning of
+      custom LaTeX packages.
+
+  From Cornelii Sandberg:
+    - Fix Variables() not reading a saved-variables file (e.g. custom.py)
+      from the source directory when building in a separate variant
+      directory. The file is now resolved through the File() node
+      infrastructure, so it is found in the source directory or a
+      repository (issue #816).
+
+  From Vassili Tchersky:
+    - Add 'bsd' platform definition.
+    - The default tool search order now prefers the LLVM/clang toolchain
+      over GCC on FreeBSD and OpenBSD (PR #4887).
 
   From Mats Wichmann:
     - Introduce some unit tests for the file locking utility routines

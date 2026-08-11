@@ -1,11 +1,3 @@
-If you are reading this in the git repository, the contents
-refer to *unreleased* changes since the last SCons release.
-Past official release announcements appear at:
-
-    https://scons.org/tag/releases.html
-
-==================================================================
-
 A new SCons release, 4.11.0, is now available on the SCons download page:
 
     https://scons.org/pages/download.html
@@ -13,15 +5,8 @@ A new SCons release, 4.11.0, is now available on the SCons download page:
 
 Here is a summary of the changes since 4.10.1:
 
-NEW FUNCTIONALITY
------------------
-
-- List new features (presumably why a checkpoint is being released)
-
 DEPRECATED FUNCTIONALITY
 ------------------------
-
-- List anything that's been deprecated since the last release
 
 - Deprecated Python 3.7 & 3.8 support.
 - Deprecated using signature-file-per-directory (aka old-style SConsign)
@@ -42,15 +27,10 @@ REMOVED FUNCTIONALITY
 CHANGED/ENHANCED EXISTING FUNCTIONALITY
 ---------------------------------------
 
-- List modifications to existing features, where the previous behavior
-  wouldn't actually be considered a bug
-
 - The tool search order now prefers clang over gcc on FreeBSD and OpenBSD.
 
 FIXES
 -----
-
-- List fixes of outright bugs
 
 - Fix --debug=includes for case of multiple source files.
 - Adjust race protection for CacheDir - now uses a unique temporary
@@ -66,10 +46,6 @@ FIXES
 
 IMPROVEMENTS
 ------------
-
-- List improvements that wouldn't be visible to the user in the
-  documentation:  performance improvements (describe the circumstances
-  under which they would be observed), or major code cleanups
 
 - Reduce unneeded computation of overrides. The Mkdir builder used an
   unknown argument ('explain') on creation, causing it to be considered
@@ -119,17 +95,11 @@ long function signature lines, and some linting-inspired cleanups.
 PACKAGING
 ---------
 
-- List changes in the way SCons is packaged and/or released
-
 - Added script for release process to find all contributors in a release and highlight
   new contributors. (Using Gemini AI)
 
 DOCUMENTATION
 -------------
-
-- List any significant changes to the documentation (not individual
-  typo fixes, even if they're mentioned in src/CHANGES.txt to give
-  the contributor credit)
 
 - Fix SCons Docbook schema to work with lxml > 5
 - More clarifications in manpage Builder Methods section.
@@ -171,8 +141,6 @@ DOCUMENTATION
 DEVELOPMENT
 -----------
 
-- List visible changes in the way SCons is developed
-
 - Introduce some unit tests for the file locking utility routines
 - Purge vim/emac local variable bloat.
 - Implement type hints for Node subclasses.
@@ -197,3 +165,13 @@ Thanks to the following contributors listed below for their contributions to thi
 .. code-block:: text
 
     git shortlog --no-merges -ns 4.10.1..HEAD
+        87  William Deegan
+        74  Mats Wichmann
+        14  Thaddeus Crews
+        10  Prabhu Singh Khalsa
+         5  Joseph Brill
+         4  Keith F. Prussing
+         4  Prabhu S. Khalsa
+         1  Cornelii Sandberg
+         1  Paul Movall
+         1  Vassili Tchersky
