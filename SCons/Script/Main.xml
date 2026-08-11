@@ -172,7 +172,7 @@ see the &f-Help; documentation for details.
 
 <note>
 <para>
-Prior to version NEXT_RELEASE,
+Prior to version 4.11.0,
 the behavior when options added by &AddOption;
 are specified with whitespace was undefined and discouraged.
 Such usage covers both the use of a space as the separator
