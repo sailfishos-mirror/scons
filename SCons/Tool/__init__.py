@@ -132,7 +132,7 @@ class Tool:
     is actually an existing instance, if so, just return ourselves
     without further setup.
 
-    .. versionchanged:: NEXT_RELEASE
+    .. versionchanged:: 4.11.0
        Accept an existing instance at creation time and don't duplicate it.
     """
 

@@ -743,7 +743,7 @@ foo.in
       <note>
 
       <para>
-      Prior to version NEXT_RELEASE,
+      Prior to version 4.11.0,
       the behavior when options added by &AddOption;
       are specified on the command line with spaces was undefined,
       and such usage was discouraged.
